@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import routesConfig from 'routes.config'
 
+import rzeczowniki from 'dictionary/rzeczowniki'
+
 import BarBox from 'components/BarBox'
 import HeaderButton from "components/HeaderButton";
 import ActionButton from 'components/ActionButton';
@@ -20,7 +22,7 @@ const StyledFooter = styled(BarBox)`
 `
 
 const dictionary = {
-  'Rzeczowniki': [],
+  'Rzeczowniki': rzeczowniki,
   'Czasowniki': [],
   'Stopniowanie przymiotników': [],
   'Bonus': [],
@@ -50,7 +52,7 @@ function PageCategories (props) {
           return <ActionButton key={index} scFontSize={'B'} scWhiteBg={item !== category} onClick={() => handleCategoryChange(item)}>{ item }</ActionButton>
         })}
       </StyledMain>
-      
+
       <StyledFooter>
         <ActionButton onClick={goToLessons}> GÅ! </ActionButton>
       </StyledFooter>

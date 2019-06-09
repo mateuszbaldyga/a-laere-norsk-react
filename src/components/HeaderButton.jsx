@@ -8,7 +8,7 @@ const StyledButton = styled.button`
 
 function HeaderButton (props) {
   return (
-    <StyledButton>
+    <StyledButton className={props.className} onClick={props.onClick}>
         {props.children}
     </StyledButton>
   )

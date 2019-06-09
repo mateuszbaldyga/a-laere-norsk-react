@@ -1,4 +1,4 @@
-const dict = [
+export default [
     [{
         'no': 'hei',
         'pl': 'cześć (na powitanie)',
@@ -2086,5 +2086,3 @@ const dict = [
         'pl': 'jakieś/kilka',
     }],
 ]
-
-export default dict
