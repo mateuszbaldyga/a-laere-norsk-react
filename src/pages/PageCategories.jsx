@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import routesConfig from '../routes.config'
+import routesConfig from 'routes.config'
 
-import BarBox from '../components/BarBox'
-import HeaderButton from "../components/HeaderButton";
-import ActionButton from '../components/ActionButton';
+import BarBox from 'components/BarBox'
+import HeaderButton from "components/HeaderButton";
+import ActionButton from 'components/ActionButton';
 
 const StyledWrapper = styled.div`
   display: flex;
