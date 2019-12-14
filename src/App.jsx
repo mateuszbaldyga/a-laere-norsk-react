@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -18,18 +18,28 @@ import BaseStyles from 'styles/base'
 import PageCategories from 'pages/PageCategories'
 import PageLessons from 'pages/PageLessons'
 
+// Components
+import ModalContainer from 'components/modals/ModalContainer'
+
+import { ModalContext } from 'context'
+
 function App () {
+  const context = useContext(ModalContext)
   return (
     <ThemeProvider theme={vars}>
-      <Router>
-        <>
-          <ResetStyles/>
-          <BaseStyles/>
+      <ModalContext.Provider value={context}>
+        <Router>
+          <>
+            <ResetStyles/>
+            <BaseStyles/>
 
-          <Route exact path={routesConfig.categories()} component={PageCategories} />
-          <Route path={routesConfig.lessons()} component={PageLessons} />
-        </>
-      </Router>
+            <Route exact path={routesConfig.categories()} component={PageCategories} />
+            <Route path={routesConfig.lessons()} component={PageLessons} />
+
+            <ModalContainer/>
+          </>
+        </Router>
+      </ModalContext.Provider>
     </ThemeProvider>
   )
 }

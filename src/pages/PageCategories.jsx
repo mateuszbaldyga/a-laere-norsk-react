@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import routesConfig from 'routes.config'
 
@@ -7,6 +7,7 @@ import rzeczowniki from 'dictionary/rzeczowniki'
 import BarBox from 'components/BarBox'
 import HeaderButton from "components/HeaderButton";
 import ActionButton from 'components/ActionButton';
+import { ModalContext } from 'context'
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ const dictionary = {
 
 function PageCategories (props) {
   const [category, setCategory] = useState('Rzeczowniki')
+  const {openModal, modalName} = useContext(ModalContext)
 
   function handleCategoryChange (cat) {
     setCategory(cat)
@@ -43,7 +45,7 @@ function PageCategories (props) {
   return (
     <StyledWrapper>
       <BarBox>
-        <HeaderButton> ☰ </HeaderButton>
+        <HeaderButton onClick={() => {openModal('Navigation'); console.log(modalName)}}> ☰ </HeaderButton>
         <HeaderButton> 🔍 </HeaderButton>
       </BarBox>
 
